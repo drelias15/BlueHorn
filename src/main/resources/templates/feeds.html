@@ -19,10 +19,6 @@
         <td th:text="${message.postDate}"></td>
         <td th:text="${message.sentBy}"></td>
 
-        <td>
-            <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
-            <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
-        </td>
     </tr>
 </table>
 </body>

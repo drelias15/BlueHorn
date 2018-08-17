@@ -21,7 +21,7 @@
     <mark><strong>
    Post Date: <span th:if="${#fields.hasErrors('postDate')}"
           th:errors="*{postDate}">Task Error</span>
-        <input type="text" id="postDate" placeholder="Post Date"
+        <input type="date" id="postDate" placeholder="Post Date"
                th:field="*{postDate}" /><br />
     </strong></mark>
     <button type="submit" class="btn bnt-default">Post</button>

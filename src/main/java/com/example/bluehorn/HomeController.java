@@ -45,7 +45,8 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("user", userService.getCurrentUser());
         return "index";
     }
 
@@ -56,11 +57,13 @@ public class HomeController {
 
     @RequestMapping("/update/{id}")
     public String userUpdate(@PathVariable("id") long id, Model model) {
+        model.addAttribute("user", userService.getCurrentUser());
         model.addAttribute("message", messageRepository.findById(id).get());
         return "messageform";
     }
     @RequestMapping("/delete/{id}")
-    public String delCourse(@PathVariable("id") long id){
+    public String delCourse(@PathVariable("id") long id, Model model){
+        model.addAttribute("user", userService.getCurrentUser());
         messageRepository.deleteById(id);
         return "redirect:/secure";
     }
@@ -75,6 +78,7 @@ public class HomeController {
     @GetMapping("/add")
     public String addTask(Model model){
         model.addAttribute("message", new Message());
+        model.addAttribute("user", userService.getCurrentUser());
         return "messageform";
     }
     @PostMapping("/process")
@@ -84,6 +88,7 @@ public class HomeController {
         message.setSentBy(username);
         messageRepository.save(message);
         model.addAttribute("messages", messageRepository.findBySentBy(username));
+
         model.addAttribute("user", userService.getCurrentUser());
         return "secure";
     }
