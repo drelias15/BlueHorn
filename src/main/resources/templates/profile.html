@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Profile</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+<div class="container-fluid">
+    <div class="col-sm-9">
+        <hr>
+        <div class="jumbotron">
+            <h1>My Profile</h1>
+            <p>
+                First Name: <span th:text="${user.firstName}"></span><br/> </p>
+            <p>Last Name: <span th:text="${user.lastName}"></span><br/></p>
+            <p>email:<span th:text="${user.email}"></span><br/>
+            </p>
+            <p>Username:<span th:text="${user.username}"></span><br/>
+            </p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

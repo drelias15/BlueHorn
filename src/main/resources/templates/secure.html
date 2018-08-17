@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Secure Page</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: navlinks">
+</div>
+<h2>Secure Page</h2>
+<div>Welcome [[${user.firstName}]]!</div>
+<table class="table">
+
+    <tr>
+        <th>Content</th>
+        <th>Post Date</th>
+        <th>Sent By</th>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.content}"></td>
+        <td th:text="${message.postDate}"></td>
+        <td th:text="${message.sentBy}"></td>
+
+        <td>
+            <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

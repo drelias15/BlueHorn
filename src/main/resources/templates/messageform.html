@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Message Form</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: navlinks">
+</div>
+<h1>Add Message</h1>
+<form  action="#" th:action="@{/process}"
+       th:object="${message}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <mark><strong>
+   Content: <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}">Content Error</span>
+        <textarea id="content" placeholder="Content"
+                  th:field="*{content}"
+                  row="3"/><br />
+    </strong></mark>
+    <mark><strong>
+   Post Date: <span th:if="${#fields.hasErrors('postDate')}"
+          th:errors="*{postDate}">Task Error</span>
+        <input type="text" id="postDate" placeholder="Post Date"
+               th:field="*{postDate}" /><br />
+    </strong></mark>
+    <button type="submit" class="btn bnt-default">Post</button>
+</form>
+</body>
+</html>
