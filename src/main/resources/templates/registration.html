@@ -6,40 +6,59 @@
 </head>
 <body>
 <div th:replace="base :: navlinks"></div>
-<h2>New User Register</h2>
-<form autocomplete="off" action="#" th:action="@{/register}"
-      th:object="${user}" method="post">
-    First Name<mark><strong>
-    <span th:if="${#fields.hasErrors('firstName')}"
-          th:errors="*{firstName}">First Name Error</span>
-</strong></mark>
-    <input type="text" id="firstName" placeholder="First Name"
-           th:field="*{firstName}" /><br />
-    Last Name<mark><strong>
-    <span th:if="${#fields.hasErrors('lastName')}"
-          th:errors="*{lastName}">Last Error</span>
-</strong></mark>
-    <input type="text" id="lastName" placeholder="Last Name"
-           th:field="*{lastName}" /><br />
-    Email <mark><strong>
-    <span th:if="${#fields.hasErrors('email')}"
-          th:errors="*{email}">Email Error</span>
-</strong></mark>
-    <input type="text" id="email" placeholder="Email"
-           th:field="*{email}" /><br />
-    Username<mark><strong>
-    <span th:if="${#fields.hasErrors('username')}"
-          th:errors="*{username}">Username Error</span>
-</strong></mark>
-    <input type="text" id="username" placeholder="username"
-           th:field="*{username}" /><br />
-    Password<mark><strong>
-    <span th:if="${#fields.hasErrors('password')}"
-          th:errors="*{password}">Password Error</span>
-</strong></mark>
-    <input type="password" id="password" placeholder="Password"
-           th:field="*{password}" /><br />
-    <button type="submit" class="btn bnt-default">Submit</button>
 </form>
+<div id="register">
+    <div class="container">
+        <div id="register-row" class="row justify-content-center align-items-center">
+            <div id="register-column" class="col-md-6">
+                <div id="register-box" class="col-md-12">
+                    <form id="register-form" class="form" autocomplete="off" action="#" th:action="@{/register}"
+                          th:object="${user}" method="post">
+                        <h3 class="text-center text-info">New User Registeration</h3>
+                        <div class="form-group">
+                            <label for="firstname" class="text-info">First Name:</label><br>
+                            <span th:if="${#fields.hasErrors('firstName')}"
+                                  th:errors="*{firstName}">First Name Error</span>
+                                <input class="form-control" name="firstname" type="text" id="firstName" placeholder="First Name"
+                                       th:field="*{firstName}" /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="text-info">Last Name:</label><br>
+                            <span th:if="${#fields.hasErrors('lastName')}"
+                                  th:errors="*{lastName}">Last Name Error</span>
+                            <input class="form-control" name="lastname" type="text" id="lastName" placeholder="Last Name"
+                                   th:field="*{lastName}" /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email:</label><br>
+                            <span th:if="${#fields.hasErrors('email')}"
+                                  th:errors="*{email}">Email Error</span>
+                            <input class="form-control" name="email" type="text" id="email" placeholder="Email"
+                                   th:field="*{email}" /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <span th:if="${#fields.hasErrors('email')}"
+                                  th:errors="*{username}">Username Error</span>
+                            <input class="form-control" name="username" type="text" id="username" placeholder="Username"
+                                   th:field="*{username}" /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <span th:if="${#fields.hasErrors('email')}"
+                                  th:errors="*{password}">Password Error</span>
+                            <input class="form-control" name="username" type="password" id="password" placeholder="Password"
+                                   th:field="*{password}" /><br />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<div th:replace="base :: footer"></div>
 </body>
 </html>

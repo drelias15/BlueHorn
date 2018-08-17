@@ -7,19 +7,13 @@
 <body>
 <div th:replace="base :: navlinks">
 </div>
-<table class="table">
-
-    <tr>
-        <th>Content</th>
-        <th>Post Date</th>
-        <th>Sent By</th>
-    </tr>
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.content}"></td>
-        <td th:text="${message.postDate}"></td>
-        <td th:text="${message.sentBy}"></td>
-
-    </tr>
-</table>
+<div th:each="message : ${messages}">
+    <th:h1>[[${message.sentBy}]]</th:h1>
+    <th:h2>[[${message.postDate}]]</th:h2>
+    <th:div class="well">
+        [[${message.content}]]
+</th:div>
+</div>
+<div th:replace="base :: footer"></div>
 </body>
 </html>

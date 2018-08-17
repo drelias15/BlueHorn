@@ -7,8 +7,7 @@
 <body>
 <div th:replace="base :: navlinks">
 </div>
-<h2>Secure Page</h2>
-<div>Welcome [[${user.firstName}]]!</div>
+<h2>Welcome to your Account</h2>
 <table class="table">
 
     <tr>
@@ -27,5 +26,6 @@
         </td>
     </tr>
 </table>
+<div th:replace="base :: footer"></div>
 </body>
 </html>
