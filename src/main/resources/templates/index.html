@@ -22,8 +22,8 @@
             <div class="carousel-caption">
                 <h1>Welcome to Blue Horn</h1>
                 <p>Share your thoughts!</p>
-                <a href="/login" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-log-in" sec:authorize="isAnonymous()"></span> Login
+                <a href="/login" class="btn btn-default btn-lg" sec:authorize="isAnonymous()">
+                    <span class="glyphicon glyphicon-log-in"></span> Login
                 </a>
                 <a href="/register" class="btn btn-default btn-lg" sec:authorize="isAnonymous()">
                     <span class="glyphicon glyphicon-registration-mark"></span> Register
