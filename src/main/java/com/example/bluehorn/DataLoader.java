@@ -52,5 +52,5 @@ public class DataLoader implements CommandLineRunner {
 //        user.setPassword(passwordEncoder.encode(user.getPassword()));
 //        user.setRoles(Arrays.asList(userRole, adminRole));
 //        userRepository.save(user);
-//    }
+    }
 }
