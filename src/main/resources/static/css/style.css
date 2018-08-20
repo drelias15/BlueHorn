@@ -28,6 +28,10 @@ footer {
         height: auto;
         padding: 15px;
     }
+    #login .container #login-row #login-column #login-box{
+        margin-left: inherit;
+        margin-right: inherit;
+    }
     .row.content {height:auto;}
 }
 .uppercase { text-transform: capitalize; }
@@ -78,5 +82,5 @@ body {
 .item {
     display: none;
     position: relative;
-.transition(5s ease-in-out left);
+.transition(10s ease-in-out left);
 }

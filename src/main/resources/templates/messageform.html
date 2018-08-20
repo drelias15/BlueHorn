@@ -7,8 +7,9 @@
 <body>
 <div th:replace="base :: navlinks">
 </div>
-<h1>Add Message</h1>
 <div class="container">
+    <h1>Share a thought</h1>
+    <div class="form-group">
 <form  action="#" th:action="@{/process}"
        th:object="${message}" method="post">
     <input type="hidden" th:field="*{id}" />
@@ -25,8 +26,9 @@
         <input type="date" id="postDate" placeholder="Post Date"
                th:field="*{postDate}" /><br />
     </strong></mark>
-    <button type="submit" class="btn bnt-default">Post</button>
+    <button type="submit" class="btn btn-info btn-lg" ><span class="glyphicon glyphicon-share-alt"></span>Share</button>
 </form>
+    </div>
 </div>
 <div th:replace="base :: footer"></div>
 </body>
