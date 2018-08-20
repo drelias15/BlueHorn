@@ -73,3 +73,8 @@ body {
 #register .container #register-row #register-column #register-box #register-form #register-link {
     margin-top: -85px;
 }
+.item {
+    display: none;
+    position: relative;
+.transition(2s ease-in-out left);
+}
