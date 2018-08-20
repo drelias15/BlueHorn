@@ -99,6 +99,14 @@ public class HomeController {
         model.addAttribute("user", userService.getCurrentUser());
         return "feeds";
     }
+
+    @RequestMapping("/list")
+    public String postlist(Model model) {
+        String username = userService.getCurrentUser().getUsername();
+        model.addAttribute("messages", messageRepository.findBySentBy(username));
+        model.addAttribute("user", userService.getCurrentUser());
+        return "secure";
+    }
     @RequestMapping("/profile/{username}")
     public String showCourse(@PathVariable("username") String username, Model model){
         username = userService.getCurrentUser().getUsername();

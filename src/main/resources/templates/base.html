@@ -27,13 +27,16 @@
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="active" sec:authorize="isAnonymous()">
-            <a class="nav-link" href="/reigster">Register</a>
+            <a class="nav-link" href="/register">Register</a>
         </li>
         <li sec:authorize="isAuthenticated()">
             <a class="nav-link" href="/add">Add Message</a>
         </li>
         <li  sec:authorize="isAuthenticated()">
             <a class="nav-link" href="/feeds">Go to Feeds</a>
+        </li>
+        <li  sec:authorize="isAuthenticated()">
+            <a class="nav-link" href="/list">See Your Post</a>
         </li>
         <li  sec:authorize="isAnonymous()">
             <a class="nav-link" href="/add">Add Message</a>
