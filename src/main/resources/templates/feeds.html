@@ -7,14 +7,18 @@
 <body>
 <div th:replace="base :: navlinks">
 </div>
-<div class="card" style="width: 30rem;">
-<div th:each="message : ${messages}">
-    <th:h1>[[${message.sentBy}]]</th:h1>
-    <th:h2>[[${message.postDate}]]</th:h2>
-    <th:div class="well">
-        [[${message.content}]]
-</th:div>
-</div>
+<div class="card text-center">
+    <div class="card-header">
+        Post
+    </div>
+    <div class="card-body" th:each="message : ${messages}">
+        <th:h5 class="card-title">[[${message.sentBy}]] Said</th:h5>
+        <th:p class="card-text">[[${message.content}]]</th:p>
+        <th:div class="card-footer text-muted" >
+            [[${message.postDate}]]
+        </th:div>
+    </div>
+
 </div>
 <div th:replace="base :: footer"></div>
 </body>
