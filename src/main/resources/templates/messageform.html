@@ -8,6 +8,7 @@
 <div th:replace="base :: navlinks">
 </div>
 <h1>Add Message</h1>
+<div class="container">
 <form  action="#" th:action="@{/process}"
        th:object="${message}" method="post">
     <input type="hidden" th:field="*{id}" />
@@ -26,6 +27,7 @@
     </strong></mark>
     <button type="submit" class="btn bnt-default">Post</button>
 </form>
+</div>
 <div th:replace="base :: footer"></div>
 </body>
 </html>
